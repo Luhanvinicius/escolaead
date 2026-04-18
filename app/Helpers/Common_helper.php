@@ -647,19 +647,67 @@ if (!function_exists('get_all_language')) {
     }
 }
 
+if (!function_exists('normalize_language_name')) {
+    function normalize_language_name($language = '')
+    {
+        $language = strtolower(trim((string) $language));
+        if ($language === '') {
+            return 'english';
+        }
+
+        $languageAliases = [
+            'portuguese' => 'pt-br',
+            'portugues'  => 'pt-br',
+            'pt_br'      => 'pt-br',
+            'ptbr'       => 'pt-br',
+        ];
+
+        return $languageAliases[$language] ?? $language;
+    }
+}
+
+if (!function_exists('language_display_name')) {
+    function language_display_name($language = '')
+    {
+        $normalizedLanguage = normalize_language_name($language);
+
+        if ($normalizedLanguage === 'pt-br') {
+            return 'PT-BR';
+        }
+
+        if ($normalizedLanguage === 'english') {
+            return 'English';
+        }
+
+        return ucwords(str_replace(['-', '_'], ' ', $normalizedLanguage));
+    }
+}
+
 if (!function_exists('get_phrase')) {
     function get_phrase($phrase = '', $value_replace = array())
     {
-        $active_lan    = session('language') ?? get_settings('language');
-        $active_lan_id = DB::table('languages')->where('name', 'like', $active_lan)->value('id');
+        $active_lan    = normalize_language_name(session('language') ?? get_settings('language'));
+        $active_lan_id = DB::table('languages')->whereRaw('LOWER(name) = ?', [$active_lan])->value('id');
+
+        // Backward compatibility for old "portuguese" records during transition.
+        if (!$active_lan_id && $active_lan === 'pt-br') {
+            $active_lan_id = DB::table('languages')
+                ->whereIn('name', ['pt-br', 'PT-BR', 'portuguese', 'Portuguese'])
+                ->value('id');
+        }
+
+        if (!$active_lan_id) {
+            $active_lan_id = DB::table('languages')->whereRaw('LOWER(name) = ?', ['english'])->value('id');
+        }
+
         $lan_phrase    = DB::table('language_phrases')->where('language_id', $active_lan_id)->where('phrase', $phrase)->first();
 
         if ($lan_phrase) {
             $translated = $lan_phrase->translated;
         } else {
             $translated  = $phrase;
-            $english_lan = DB::table('languages')->where('name', 'like', 'english')->first();
-            if (DB::table('language_phrases')->where('language_id', $english_lan->id)->where('phrase', $phrase)->count() == 0) {
+            $english_lan = DB::table('languages')->whereRaw('LOWER(name) = ?', ['english'])->first();
+            if ($english_lan && DB::table('language_phrases')->where('language_id', $english_lan->id)->where('phrase', $phrase)->count() == 0) {
                 DB::table('language_phrases')->insert(['language_id' => $english_lan->id, 'phrase' => $phrase, 'translated' => $translated]);
             }
         }
@@ -836,16 +884,78 @@ if (!function_exists('get_settings')) {
     {
         $value = App\Models\Setting::where('type', $type);
         if ($value->count() > 0) {
+            $settingValue = $value->value('description');
+
             if ($return_type === true) {
-                return json_decode($value->value('description'), true);
+                return json_decode($settingValue, true);
             } elseif ($return_type === "object") {
-                return json_decode($value->value('description'));
+                return json_decode($settingValue);
             } else {
-                return $value->value('description');
+                if ($type === 'language') {
+                    return normalize_language_name($settingValue);
+                }
+                return $settingValue;
             }
         } else {
             return false;
         }
+    }
+}
+
+if (!function_exists('site_contact_phone')) {
+    function site_contact_phone()
+    {
+        $envPhone = trim((string) config('app.site_contact_phone', ''));
+        if ($envPhone !== '') {
+            return $envPhone;
+        }
+
+        $frontendContactInfo = get_frontend_settings('contact_info', true);
+        if (is_array($frontendContactInfo)) {
+            $frontendPhone = trim((string) ($frontendContactInfo['phone'] ?? ''));
+            if ($frontendPhone !== '') {
+                return $frontendPhone;
+            }
+        }
+
+        return trim((string) get_settings('phone'));
+    }
+}
+
+if (!function_exists('site_contact_phone_tel')) {
+    function site_contact_phone_tel()
+    {
+        $phone = site_contact_phone();
+        if ($phone === '') {
+            return '';
+        }
+
+        return preg_replace('/[^0-9+]/', '', $phone);
+    }
+}
+
+if (!function_exists('site_contact_whatsapp_number')) {
+    function site_contact_whatsapp_number()
+    {
+        $digits = preg_replace('/\D+/', '', site_contact_phone());
+        if ($digits === '') {
+            return '';
+        }
+
+        if (str_starts_with($digits, '00')) {
+            $digits = substr($digits, 2);
+        }
+
+        $countryCode = preg_replace('/\D+/', '', (string) config('app.site_contact_country_code', '55'));
+        if ($countryCode === '') {
+            $countryCode = '55';
+        }
+
+        if (!str_starts_with($digits, $countryCode) && strlen($digits) <= 11) {
+            $digits = $countryCode . $digits;
+        }
+
+        return $digits;
     }
 }
 

@@ -57,7 +57,7 @@
                                     @endphp
                                     @foreach ($languages as $language)
                                         <tr>
-                                            <td class="text-capitalize">{{ $language->name }}</td>
+                                            <td>{{ language_display_name($language->name) }}</td>
                                             <td>
                                                 <div class="form-group">
                                                     <form action="#">
@@ -72,7 +72,7 @@
                                             <td class="">
                                                 <a href="{{ route('admin.language.phrase.edit', ['lan_id' => $language->id]) }}" class="btn btn-light-white">{{ get_phrase('Edit phrase') }}</a>
 
-                                                @if ($language->name == 'english' || $language->name == 'English')
+                                                @if (normalize_language_name($language->name) == 'english')
                                                 @else
                                                     <a href="javascript:;" onclick="confirmModal('{{ route('admin.language.delete', ['id' => $language->id]) }}')" class="btn btn-light-white">{{ get_phrase('Delete language') }}</a>
                                                 @endif

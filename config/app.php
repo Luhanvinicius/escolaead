@@ -27,6 +27,10 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'site_contact_phone' => env('SITE_CONTACT_PHONE', ''),
+
+    'site_contact_country_code' => env('SITE_CONTACT_COUNTRY_CODE', '55'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

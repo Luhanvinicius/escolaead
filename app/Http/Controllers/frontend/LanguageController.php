@@ -11,7 +11,7 @@ class LanguageController extends Controller
 {
     public function select_lng(Request $request)
     {
-        session(['language' => strtolower($request->language)]);
+        session(['language' => normalize_language_name($request->language)]);
         return redirect()->back();
     }
 }

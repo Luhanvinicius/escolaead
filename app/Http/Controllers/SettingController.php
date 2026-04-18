@@ -36,6 +36,9 @@ class SettingController extends Controller
         array_shift($data);
 
         foreach ($data as $key => $item) {
+            if ($key == 'language') {
+                $item = normalize_language_name($item);
+            }
             Setting::where('type', $key)->update(['description' => $item]);
         }
         Session::flash('success', get_phrase('System settings update successfully'));
@@ -54,6 +57,10 @@ class SettingController extends Controller
         if ($request->type == 'frontend_settings') {
 
             foreach ($data as $key => $item) {
+                // Keep static page markup in blade templates/phrases, not in settings table.
+                if ($key == 'about_us') {
+                    continue;
+                }
                 FrontendSetting::where('key', $key)->update(['value' => $item]);
             }
             Session::flash('success', get_phrase('Frontend settings update successfully'));

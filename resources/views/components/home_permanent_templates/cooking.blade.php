@@ -440,7 +440,7 @@
                 <div class="col-xl-5 col-lg-6 order-2 order-lg-1">
                     <div class="">
                         <h1 class="title-5 fs-32px lh-42px fw-600 mb-20px">{{ get_phrase('Know About Academy LMS Learning Platform') }}</h1>
-                        <div>{!! ellipsis(removeScripts(get_frontend_settings('about_us')), 300) !!}</div>
+                        <div>{{ get_phrase('At EscolaEAD, we simplify online learning with practical courses, expert instructors, and support that helps every student evolve with confidence.') }}</div>
                         <a href="{{ route('about.us') }}" class="rectangle-btn1 mt-5">{{ get_phrase('Learn More') }}</a>
                     </div>
                 </div>

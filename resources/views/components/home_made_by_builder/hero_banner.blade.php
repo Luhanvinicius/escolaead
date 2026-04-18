@@ -2,21 +2,29 @@
 {{-- builder identity and builder editable --}}
 {{-- builder identity value have to be unique under a single file --}}
 
+@php
+    $contact_phone = site_contact_phone();
+    $contact_phone_tel = site_contact_phone_tel();
+@endphp
+
 <section class="banner-wraper mt-0 mt-md-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 order-2 order-md-1">
                 <div class="banner-content">
-                    <h5 class="d-flex"><img class="builder-editable" builder-identity="1" src="{{asset('assets/page-builder/block-image/roket.svg')}}" alt="..."> <span class="builder-editable" builder-identity="2">The Leader in online learning</span></h5>
+                    <h5 class="d-flex"><img class="builder-editable" builder-identity="1" src="{{asset('assets/page-builder/block-image/roket.svg')}}" alt="..."> <span class="builder-editable" builder-identity="2">Lider em educacao online</span></h5>
                     <h1>
-                        <span class="builder-editable" builder-identity="3">Start learning from the world's pro</span>
-                        <span class="gradient color shadow-none builder-editable" builder-identity="4">instructors</span>
+                        <span class="builder-editable" builder-identity="3">Comece a aprender com</span>
+                        <span class="gradient color shadow-none builder-editable" builder-identity="4">instrutores especialistas</span>
                     </h1>
-                    <p class="builder-editable" builder-identity="5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.</p>
+                    <p class="builder-editable" builder-identity="5">Aprenda com conteudo pratico, trilhas completas e suporte para evoluir no seu ritmo.</p>
                     <div class="banner-btn">
-                        <a href="{{ route('courses') }}" class="eBtn gradient builder-editable" builder-identity="6">Get Started</a>
-                        <a data-bs-toggle="modal" data-bs-target="#promoVideo" href="#" class="eBtn learn-btn"><i class="fa-solid fa-play"></i>{{ get_phrase('Learn More') }}</a>
+                        <a href="{{ route('courses') }}" class="eBtn gradient builder-editable" builder-identity="6">Comecar agora</a>
+                        <a data-bs-toggle="modal" data-bs-target="#promoVideo" href="#" class="eBtn learn-btn"><i class="fa-solid fa-play"></i>Saiba mais</a>
                     </div>
+                    @if ($contact_phone)
+                        <p class="mt-3 mb-0">Contato: <a href="tel:{{ $contact_phone_tel }}">{{ $contact_phone }}</a></p>
+                    @endif
                 </div>
             </div>
             <div class="col-sm-8 col-md-6 order-1 order-md-2">
@@ -62,7 +70,7 @@
                         </span>
                         <div class="b-text">
                             <h5>{{ total_enrolled() }}+</h5>
-                            <p>{{ get_phrase('Students has Enrolled') }}</p>
+                            <p>Alunos ja matriculados</p>
                         </div>
                     </div>
                 </div>

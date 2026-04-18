@@ -2,6 +2,12 @@
 {{-- builder identity and builder editable --}}
 {{-- builder identity value have to be unique under a single file --}}
 
+@php
+    $contact_phone = site_contact_phone();
+    $contact_phone_tel = site_contact_phone_tel();
+    $contact_whatsapp = site_contact_whatsapp_number();
+@endphp
+
 <footer class="footer-area">
     <div class="container">
         <div class="row">
@@ -53,11 +59,19 @@
                             <h4>{{ get_phrase('Company') }}</h4>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="tel:{{ $contact_phone_tel }}">
                                         {{ get_phrase('Phone : ') }}
-                                        {{ get_settings('phone') }}
+                                        {{ $contact_phone }}
                                     </a>
                                 </li>
+                                @if ($contact_whatsapp)
+                                    <li>
+                                        <a href="https://wa.me/{{ $contact_whatsapp }}" target="_blank" rel="noopener">
+                                            {{ get_phrase('Whatsapp : ') }}
+                                            {{ $contact_phone }}
+                                        </a>
+                                    </li>
+                                @endif
                                 <li>
                                     <a href="#">
                                         {{ get_phrase('Email : ') }}

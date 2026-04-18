@@ -91,8 +91,14 @@
                             <div class="fpb-7 mb-3">
                                 <label class="form-label ol-form-label" for="language">{{ get_phrase('System language') }}</label>
                                 <select class="form-control ol-form-control ol-select2" data-toggle="select2" name="language" id="language">
+                                    @php
+                                        $systemLanguage = normalize_language_name(get_settings('language'));
+                                    @endphp
                                     @foreach(App\Models\Language::get() as $language)
-                                        <option value="{{strtolower($language->name)}}" @if (get_settings('language') == strtolower($language->name)) selected @endif>{{ $language->name }}</option>
+                                        @php
+                                            $languageValue = normalize_language_name($language->name);
+                                        @endphp
+                                        <option value="{{ $languageValue }}" @selected($systemLanguage == $languageValue)>{{ language_display_name($language->name) }}</option>
                                     @endforeach
                                 </select>
                             </div>

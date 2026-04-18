@@ -115,14 +115,38 @@
         <div class="widget">
             <h4 class="widget-title">{{ get_phrase('language') }}</h4>
             <ul class="entry-widget">
-                @foreach (['english', 'spanish', 'italic', 'german'] as $language)
+                @php
+                    $languageOptions = App\Models\Course::query()
+                        ->whereNotNull('language')
+                        ->where('language', '!=', '')
+                        ->distinct()
+                        ->orderBy('language')
+                        ->pluck('language');
+
+                    if ($languageOptions->isEmpty()) {
+                        $languageOptions = App\Models\Language::query()
+                            ->orderBy('name')
+                            ->pluck('name');
+                    }
+
+                    $languageOptions = $languageOptions
+                        ->map(fn($language) => normalize_language_name($language))
+                        ->filter()
+                        ->unique()
+                        ->values();
+                @endphp
+                @foreach ($languageOptions as $language)
                     <li class="filter-item">
                         <div class="form-check">
+                            @php
+                                $languageDomId = \Illuminate\Support\Str::slug($language, '-');
+                                $selectedLanguage = normalize_language_name((string) request()->input('language'));
+                            @endphp
                             <input class="form-check-input mt-0" type="radio" name="language"
-                                value="{{ $language }}" id="language-{{ $language }}"
-                                @if (request()->has('language') && request()->input('language') == $language) checked @endif />
+                                value="{{ $language }}" id="language-{{ $languageDomId }}"
+                                @if (request()->has('language') && $selectedLanguage == $language) checked @endif />
                             <label class="form-check-label"
-                                for="language-{{ $language }}">{{ get_phrase(ucfirst($language)) }}</label>
+                                for="language-{{ $languageDomId }}">{{ language_display_name($language) }}</label>
                         </div>
                     </li>
                 @endforeach

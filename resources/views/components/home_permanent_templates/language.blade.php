@@ -213,7 +213,7 @@
                         <p class="subtitle-1 fs-16px lh-24px mb-26px">
                             {{ get_phrase('Far far away, behind the word mountains, far from the away countries Vokalia and Consonantia, there live the blind texts.') }}</p>
                         <div class="about-text-items ellipsis-line-12 mb-26px">
-                            {!! ellipsis(removeScripts(get_frontend_settings('about_us')), 160) !!}
+                            {{ get_phrase('At EscolaEAD, we simplify online learning with practical courses, expert instructors, and support that helps every student evolve with confidence.') }}
                         </div>
                         <a href="{{ route('about.us') }}" class="btn btn-primary-2">{{ get_phrase('Learn More') }}</a>
                     </div>

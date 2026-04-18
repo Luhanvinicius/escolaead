@@ -8,11 +8,11 @@
             <div class="col-lg-12">
                 <div class="res-control d-flex align-items-center justify-content-between">
                     <div class="section-title mb-0">
-                        <span class="title-head mb-10 builder-editable" builder-identity="1">Our Blog</span>
-                        <h2 class="title builder-editable" builder-identity="2">Have a look on our news</h2>
+                        <span class="title-head mb-10 builder-editable" builder-identity="1">Nosso blog</span>
+                        <h2 class="title builder-editable" builder-identity="2">Veja nossas novidades</h2>
                     </div>
                     <span class="blog-view-all-button">
-                        <a href="{{ route('blogs') }}" class="eBtn gradient builder-editable" builder-identity="3">View All Blogs</a>
+                        <a href="{{ route('blogs') }}" class="eBtn gradient builder-editable" builder-identity="3">Ver todos os artigos</a>
                     </span>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                             </div>
                             <p></p>
                             <div class="b_bottom d-flex justify-content-between">
-                                <a href="{{ route('blog.details', $blog->slug) }}" class="read-text mt-0 stretched-link">{{ get_phrase('Read More') }}<i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                                <a href="{{ route('blog.details', $blog->slug) }}" class="read-text mt-0 stretched-link">Ler mais<i class="fa-solid fa-arrow-right-long ms-2"></i></a>
                                 <span>{{ date('d M, Y', strtotime($blog->created_at)) }}</span>
                             </div>
                         </div>

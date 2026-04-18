@@ -19,18 +19,18 @@
                         </span>
                         <div class="b-text">
                             <h5 class="builder-editable" builder-identity="2">150k +</h5>
-                            <p class="builder-editable" builder-identity="3">Top rated Courses</p>
+                            <p class="builder-editable" builder-identity="3">Cursos mais bem avaliados</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-7 col-md-6">
                 <div class="skil-content">
-                    <span class="title-head builder-editable" builder-identity="4">Know About Us</span>
-                    <h2 class="title"><span class="builder-editable" builder-identity="5">Learn & Grow Your Skills From</span> <span class="gradient shadow-none color builder-editable" builder-identity="52nd">Educate</span>
+                    <span class="title-head builder-editable" builder-identity="4">Sobre nos</span>
+                    <h2 class="title"><span class="builder-editable" builder-identity="5">Aprenda e desenvolva suas habilidades com</span> <span class="gradient shadow-none color builder-editable" builder-identity="52nd">Educate</span>
                     </h2>
                     <p class="description mt-5 builder-editable" builder-identity="6">
-                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.
+                        Somos uma plataforma focada em ensino pratico, trilhas objetivas e evolucao real para alunos e profissionais.
                     </p>
                     <ul>
                         <li>
@@ -42,8 +42,8 @@
                                 </svg>
                             </div>
                             <div class="skill-text">
-                                <span class="builder-editable" builder-identity="7">Life time Access</span>
-                                <p class="builder-editable" builder-identity="8">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                                <span class="builder-editable" builder-identity="7">Acesso para toda a vida</span>
+                                <p class="builder-editable" builder-identity="8">Assista as aulas no seu ritmo e revise quando quiser, sem perder o acesso ao conteudo.
                                 </p>
                             </div>
                         </li>
@@ -56,12 +56,12 @@
                                 </svg>
                             </div>
                             <div class="skill-text">
-                                <span class="builder-editable" builder-identity="9">Learn from Anywhere</span>
-                                <p class="builder-editable" builder-identity="10">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                <span class="builder-editable" builder-identity="9">Estude de qualquer lugar</span>
+                                <p class="builder-editable" builder-identity="10">Conteudo disponivel em qualquer dispositivo para voce aprender onde estiver.</p>
                             </div>
                         </li>
                     </ul>
-                    <a href="{{ route('about.us') }}" class="eBtn gradient mt-50 mb-5 builder-editable" builder-identity="11">More about us <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                    <a href="{{ route('about.us') }}" class="eBtn gradient mt-50 mb-5 builder-editable" builder-identity="11">Saiba mais sobre nos <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
                 </div>
             </div>
         </div>

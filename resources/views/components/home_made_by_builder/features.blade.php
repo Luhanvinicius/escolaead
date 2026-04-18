@@ -9,29 +9,29 @@
                 <div class="col-lg-3 col-md-6 col-sm-6  ps-border">
                     <div class="ps-single-wrap">
                         <img class="builder-editable" builder-identity="1" src="{{asset('assets/page-builder/block-image/p1.png')}}" alt="...">
-                        <h4 class="builder-editable" builder-identity="2">Fast Performance</h4>
-                        <p class="description builder-editable" builder-identity="3">It is a long established fact that a reader will be distracted.</p>
+                        <h4 class="builder-editable" builder-identity="2">Performance rapida</h4>
+                        <p class="description builder-editable" builder-identity="3">Plataforma otimizada para um aprendizado leve e sem travamentos.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 ps-border">
                     <div class="ps-single-wrap">
                         <img class="builder-editable" builder-identity="4" src="{{asset('assets/page-builder/block-image/p2.png')}}" alt="...">
-                        <h4 class="builder-editable" builder-identity="5">Perfect Responsive</h4>
-                        <p class="description builder-editable" builder-identity="6">It is a long established fact that a reader will be distracted.</p>
+                        <h4 class="builder-editable" builder-identity="5">Totalmente responsivo</h4>
+                        <p class="description builder-editable" builder-identity="6">Acesse no celular, tablet ou computador com a mesma qualidade.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 ps-border">
                     <div class="ps-single-wrap">
                         <img class="builder-editable" builder-identity="7" src="{{asset('assets/page-builder/block-image/p3.png')}}" alt="...">
-                        <h4 class="builder-editable" builder-identity="8">Fast & Friendly Support</h4>
-                        <p class="description builder-editable" builder-identity="9">It is a long established fact that a reader will be distracted.</p>
+                        <h4 class="builder-editable" builder-identity="8">Suporte agil e humano</h4>
+                        <p class="description builder-editable" builder-identity="9">Atendimento proximo para tirar duvidas e manter seu progresso.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 ps-border">
                     <div class="ps-single-wrap">
                         <img class="builder-editable" builder-identity="10" src="{{asset('assets/page-builder/block-image/p4.png')}}" alt="...">
-                        <h4 class="builder-editable" builder-identity="11">Easy to Use</h4>
-                        <p class="description builder-editable" builder-identity="12">It is a long established fact that a reader will be distracted.</p>
+                        <h4 class="builder-editable" builder-identity="11">Facil de usar</h4>
+                        <p class="description builder-editable" builder-identity="12">Interface simples para voce estudar sem complicacao.</p>
                     </div>
                 </div>
             </div>

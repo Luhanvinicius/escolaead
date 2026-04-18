@@ -33,6 +33,9 @@
                 } else {
                     $contact_info = ['email' => '', 'phone' => '', 'address' => '', 'office_hours' => '', 'location' => ''];
                 }
+                $contact_info['phone'] = site_contact_phone();
+                $contact_phone_tel = site_contact_phone_tel();
+                $contact_whatsapp = site_contact_whatsapp_number();
             @endphp
             <div class="row justify-content-center mt-25">
                 <div class="col-lg-4 col-md-6 col-sm-6 mb-30">
@@ -102,7 +105,10 @@
                         </div>
                         <h4 class="g-title">{{ get_phrase('Contact Info') }}</h4>
                         <p>{{ get_phrase('Open a chat or give us call at') }}</p>
-                        <a href="#">{{ $contact_info['phone'] }}</a>
+                        <a href="tel:{{ $contact_phone_tel }}">{{ $contact_info['phone'] }}</a>
+                        @if ($contact_whatsapp)
+                            <a href="https://wa.me/{{ $contact_whatsapp }}" target="_blank" rel="noopener" class="d-block mt-2">WhatsApp: {{ $contact_info['phone'] }}</a>
+                        @endif
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 mb-30">
@@ -161,23 +167,23 @@
                         <form action="{{ route('contact.store') }}" method="post" class="global-form mt-25">@csrf
                             <div class="form-group">
                                 <label for="name" class="form-label">{{ get_phrase('Name') }}</label>
-                                <input type="text" name="name" class="form-control @error('name') border border-danger @enderror" placeholder="Your Name">
+                                <input type="text" name="name" class="form-control @error('name') border border-danger @enderror" placeholder="{{ get_phrase('Your Name') }}">
                             </div>
                             <div class="form-group">
                                 <label for="email" class="form-label">{{ get_phrase('Email') }}</label>
-                                <input type="email" name="email" class="form-control @error('email') border border-danger @enderror" placeholder="Your Email">
+                                <input type="email" name="email" class="form-control @error('email') border border-danger @enderror" placeholder="{{ get_phrase('Your Email') }}">
                             </div>
                             <div class="form-group">
                                 <label for="phone" class="form-label">{{ get_phrase('Phone') }}</label>
-                                <input type="tel" name="phone" class="form-control @error('phone') border border-danger @enderror" placeholder="Your phone">
+                                <input type="tel" name="phone" class="form-control @error('phone') border border-danger @enderror" placeholder="{{ get_phrase('Your phone') }}">
                             </div>
                             <div class="form-group">
                                 <label for="address" class="form-label">{{ get_phrase('Address') }}</label>
-                                <input type="text" name="address" class="form-control @error('address') border border-danger @enderror" placeholder="Your address">
+                                <input type="text" name="address" class="form-control @error('address') border border-danger @enderror" placeholder="{{ get_phrase('Your address') }}">
                             </div>
                             <div class="form-group">
                                 <label for="message" class="form-label">{{ get_phrase('Message') }}</label>
-                                <textarea name="message" cols="30" rows="10" class="form-control @error('message') border border-danger @enderror" placeholder="Your message here ..."></textarea>
+                                <textarea name="message" cols="30" rows="10" class="form-control @error('message') border border-danger @enderror" placeholder="{{ get_phrase('Your message here ...') }}"></textarea>
                             </div>
                             <button type="submit" class="eBtn gradient mt-20">{{ get_phrase('Send Message') }}</button>
                         </form>

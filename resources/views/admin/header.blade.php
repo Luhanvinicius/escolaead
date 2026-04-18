@@ -22,7 +22,7 @@
         <div class="d-none d-sm-block">
             <div class="img-text-select ">
                 @php
-                    $activated_language = strtolower(session('language') ?? get_settings('language'));
+                    $activated_language = normalize_language_name(session('language') ?? get_settings('language'));
                 @endphp
                 <div class="selected-show" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ get_phrase('Language') }}">
                     <i class="fi-rr-language text-20px py-2"></i>
@@ -30,11 +30,14 @@
                 <div class="drop-content">
                     <ul>
                         @foreach (App\Models\Language::get() as $lng)
+                            @php
+                                $lngName = normalize_language_name($lng->name);
+                            @endphp
                             <li>
-                                <a href="{{ route('admin.select.language', ['language' => $lng->name]) }}" class="select-text text-capitalize">
+                                <a href="{{ route('admin.select.language', ['language' => $lngName]) }}" class="select-text">
 
-                                    <i class="fi fi-br-check text-10px me-1 @if ($activated_language != strtolower($lng->name)) visibility-hidden @endif"></i>
-                                    {{ $lng->name }}
+                                    <i class="fi fi-br-check text-10px me-1 @if ($activated_language != $lngName) visibility-hidden @endif"></i>
+                                    {{ language_display_name($lng->name) }}
                                 </a>
                             </li>
                         @endforeach

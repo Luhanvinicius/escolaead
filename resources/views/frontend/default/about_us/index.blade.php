@@ -28,7 +28,16 @@
     <!-- Start About Us -->
     <section class="course-details-wraper pb-120 pt-30">
         <div class="container description-style">
-            {!! htmlspecialchars_decode(removeScripts(get_frontend_settings('about_us'))) !!}
+            <h2>{{ get_phrase('Our Mission') }}</h2>
+            <p>{{ get_phrase('At EscolaEAD, we make quality education simple, practical, and accessible for everyone.') }}</p>
+            <p>{{ get_phrase('We connect students, instructors, and modern tools so learning can happen from anywhere with confidence.') }}</p>
+
+            <h3>{{ get_phrase('What we believe') }}</h3>
+            <ul>
+                <li>{{ get_phrase('Learning should be clear, flexible, and focused on real progress.') }}</li>
+                <li>{{ get_phrase('Technology must support people, not create complexity.') }}</li>
+                <li>{{ get_phrase('Knowledge grows better in a collaborative community.') }}</li>
+            </ul>
         </div>
     </section>
     <!-- End About Us -->

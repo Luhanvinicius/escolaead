@@ -9,9 +9,9 @@
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <div class="section-title ">
-                    <span class="title-head builder-editable" builder-identity="3">Testimonial</span>
-                    <h2 class="title builder-editable" builder-identity="4">What our clients says about us</h2>
-                    <p class="description mt-5 builder-editable" builder-identity="5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    <span class="title-head builder-editable" builder-identity="3">Depoimentos</span>
+                    <h2 class="title builder-editable" builder-identity="4">O que nossos alunos dizem</h2>
+                    <p class="description mt-5 builder-editable" builder-identity="5">Resultados reais de quem ja esta estudando com a nossa plataforma.</p>
                 </div>
             </div>
             <div class="col-lg-8 col-md-8">
@@ -24,12 +24,12 @@
                         <div class="testimonial-border">
                             <div class="testimonial-des">
                                 <p class="description overlay-content overlay-content-max-h-150">
-                                    <span class="builder-editable" builder-identity="7">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of use Lorem Ipsum.</span>
+                                    <span class="builder-editable" builder-identity="7">A plataforma e clara, objetiva e me ajudou a evoluir de forma pratica no dia a dia.</span>
                                 </p>
                                 <div class="user-info d-flex">
                                     <div class="ellipsis-line-2">
-                                        <h4><span class="builder-editable" builder-identity="8">Linchon Philips</span></h4>
-                                        <p><span class="builder-editable" builder-identity="9">CEO @ Yahoo</span></p>
+                                        <h4><span class="builder-editable" builder-identity="8">Marina Souza</span></h4>
+                                        <p><span class="builder-editable" builder-identity="9">Aluna</span></p>
                                     </div>
                                     <ul class="d-flex align-items-center">
                                         <li><i class="fa fa-star"></i></li>
@@ -49,11 +49,11 @@
                         </div>
                         <div class="testimonial-border">
                             <div class="testimonial-des">
-                                <p class="description overlay-content overlay-content-max-h-150"><span class="builder-editable" builder-identity="11">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of use Lorem Ipsum.</span></p>
+                                <p class="description overlay-content overlay-content-max-h-150"><span class="builder-editable" builder-identity="11">Consegui estudar no meu tempo e aplicar o conteudo rapidamente no trabalho.</span></p>
                                 <div class="user-info d-flex">
                                     <div class="ellipsis-line-2">
-                                        <h4><span class="builder-editable" builder-identity="12">Linchon Philips</span></h4>
-                                        <p><span class="builder-editable" builder-identity="13">CEO @ Yahoo</span></p>
+                                        <h4><span class="builder-editable" builder-identity="12">Carlos Lima</span></h4>
+                                        <p><span class="builder-editable" builder-identity="13">Aluno</span></p>
                                     </div>
                                     <ul class="d-flex align-items-center">
                                         <li><i class="fa fa-star"></i></li>
@@ -73,20 +73,20 @@
                         </div>
                         <div class="testimonial-border">
                             <div class="testimonial-des">
-                                <span class="description overlay-content overlay-content-max-h-150"><span class="builder-editable" builder-identity="15">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of use Lorem Ipsum.</span></p>
-                                    <div class="user-info d-flex">
-                                        <div class="ellipsis-line-2">
-                                            <h4><span class="builder-editable" builder-identity="16">Linchon Philips</span></h4>
-                                            <p><span class="builder-editable" builder-identity="17">CEO @ Yahoo</span></p>
-                                        </div>
-                                        <ul class="d-flex align-items-center">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
+                                <p class="description overlay-content overlay-content-max-h-150"><span class="builder-editable" builder-identity="15">As aulas sao diretas ao ponto e a experiencia no celular funciona muito bem.</span></p>
+                                <div class="user-info d-flex">
+                                    <div class="ellipsis-line-2">
+                                        <h4><span class="builder-editable" builder-identity="16">Fernanda Alves</span></h4>
+                                        <p><span class="builder-editable" builder-identity="17">Aluna</span></p>
                                     </div>
+                                    <ul class="d-flex align-items-center">
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -97,11 +97,11 @@
                         </div>
                         <div class="testimonial-border">
                             <div class="testimonial-des">
-                                <p class="description overlay-content overlay-content-max-h-150"><span class="builder-editable" builder-identity="19">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of use Lorem Ipsum.</span></p>
+                                <p class="description overlay-content overlay-content-max-h-150"><span class="builder-editable" builder-identity="19">A metodologia e excelente e o suporte sempre responde rapido quando preciso.</span></p>
                                 <div class="user-info d-flex">
                                     <div class="ellipsis-line-2">
-                                        <h4><span class="builder-editable" builder-identity="20">Linchon Philips</span></h4>
-                                        <p><span class="builder-editable" builder-identity="21">CEO @ Yahoo</span></p>
+                                        <h4><span class="builder-editable" builder-identity="20">Rafael Costa</span></h4>
+                                        <p><span class="builder-editable" builder-identity="21">Aluno</span></p>
                                     </div>
                                     <ul class="d-flex align-items-center">
                                         <li><i class="fa fa-star"></i></li>
@@ -121,11 +121,11 @@
                         </div>
                         <div class="testimonial-border">
                             <div class="testimonial-des">
-                                <p class="description overlay-content overlay-content-max-h-150"><span class="builder-editable" builder-identity="23">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of use Lorem Ipsum.</span></p>
+                                <p class="description overlay-content overlay-content-max-h-150"><span class="builder-editable" builder-identity="23">Gostei muito da organizacao dos cursos e da qualidade do material complementar.</span></p>
                                 <div class="user-info d-flex">
                                     <div class="ellipsis-line-2">
-                                        <h4><span class="builder-editable" builder-identity="24">Linchon Philips</span></h4>
-                                        <p><span class="builder-editable" builder-identity="25">CEO @ Yahoo</span></p>
+                                        <h4><span class="builder-editable" builder-identity="24">Juliana Melo</span></h4>
+                                        <p><span class="builder-editable" builder-identity="25">Aluna</span></p>
                                     </div>
                                     <ul class="d-flex align-items-center">
                                         <li><i class="fa fa-star"></i></li>

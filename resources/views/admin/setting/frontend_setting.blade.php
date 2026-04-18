@@ -62,8 +62,9 @@
         <textarea name="cookie_policy" id = "cookie_policy" class="form-control ol-form-control text_editor" rows="5">{!! removeScripts(get_frontend_settings('cookie_policy')) !!}</textarea>
     </div>
     <div class="fpb-7 mb-3">
-        <label class="form-label ol-form-label" for="about_us">{{ get_phrase('About us') }}</label>
-        <textarea name="about_us" id = "about_us" class="form-control ol-form-control text_editor" rows="5">{!! removeScripts(get_frontend_settings('about_us')) !!}</textarea>
+        <div class="alert alert-light border mb-0">
+            {{ get_phrase('About Us content is managed in the frontend templates and language phrases. Keep database content for dynamic fields only.') }}
+        </div>
     </div>
     <div class="fpb-7 mb-3">
         <label class="form-label ol-form-label" for="terms_and_condition">{{ get_phrase('Terms and condition') }}</label>

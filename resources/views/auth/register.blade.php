@@ -24,7 +24,7 @@
                         <p class="description">{{ get_phrase('See your growth and get consulting support! ') }}</p>
                         <div class="form-group mb-5">
                             <label for="" class="form-label">{{ get_phrase('Name') }}</label>
-                            <input type="text" name="name" class="form-control" placeholder="Your Name">
+                            <input type="text" name="name" class="form-control" placeholder="{{ get_phrase('Your Name') }}">
 
                             @error('name')
                                 <small class="text-danger">{{ $message }}</small>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group mb-5">
                             <label for="" class="form-label">{{ get_phrase('Email') }}</label>
-                            <input type="email" name="email" class="form-control" placeholder="Your Email">
+                            <input type="email" name="email" class="form-control" placeholder="{{ get_phrase('Your Email') }}">
 
                             @error('email')
                                 <small class="text-danger">{{ $message }}</small>
