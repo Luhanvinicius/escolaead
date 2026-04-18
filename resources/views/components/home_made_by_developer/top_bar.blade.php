@@ -47,7 +47,7 @@
                                     @php
                                         $activated_language = normalize_language_name(session('language') ?? get_settings('language'));
                                     @endphp
-                                    @foreach (App\Models\Language::all() as $lng)
+                                    @foreach (get_all_language() as $lng)
                                         @php
                                             $lngName = normalize_language_name($lng->name);
                                             $lngLabel = language_display_name($lng->name);

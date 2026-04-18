@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-12">
             <div class="mb-3">
-                <label for="subject_name" class="form-label ol-form-label">{{ get_phrase('subject Name') }}</label>
+                <label for="subject_name" class="form-label ol-form-label">{{ get_phrase('Subject Name') }}</label>
                 <input type="text" name="name" value="{{ $subject->name }}" class="form-control ol-form-control" id="subject_name" placeholder="{{ get_phrase('Enter your subject name') }}" aria-label="{{ get_phrase('Enter your unique subject name') }}" required />
             </div>
 

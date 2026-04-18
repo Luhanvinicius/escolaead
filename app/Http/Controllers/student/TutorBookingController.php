@@ -272,6 +272,6 @@ class TutorBookingController extends Controller
             ]);
         }
 
-        return redirect()->back()->with('success', 'Review submitted successfully.');
+        return redirect()->back()->with('success', get_phrase('Review submitted successfully.'));
     }
 }

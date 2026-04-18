@@ -84,7 +84,7 @@
 
                                                         <ul class="dropdown-menu">
                                                             <li>
-                                                                <a href="#" class="dropdown-item" onclick="ajaxModal('{{ route('modal', ['admin.tutor_booking.category_edit', 'id' => $category->id]) }}', '{{ get_phrase('Edit subject') }}')"> {{ get_phrase('Edit') }}</a>
+                                                                <a href="#" class="dropdown-item" onclick="ajaxModal('{{ route('modal', ['admin.tutor_booking.category_edit', 'id' => $category->id]) }}', '{{ get_phrase('Edit category') }}')"> {{ get_phrase('Edit') }}</a>
                                                             </li>
                                                             <li>
                                                                 @if($category['status'] == 1)

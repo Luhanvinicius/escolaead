@@ -12,18 +12,18 @@
         <div class="row justify-content-center">
             <div class="col-md-6 order-2 order-md-1">
                 <div class="banner-content">
-                    <h5 class="d-flex"><img class="builder-editable" builder-identity="1" src="{{asset('assets/page-builder/block-image/roket.svg')}}" alt="..."> <span class="builder-editable" builder-identity="2">Lider em educacao online</span></h5>
+                    <h5 class="d-flex"><img class="builder-editable" builder-identity="1" src="{{asset('assets/page-builder/block-image/roket.svg')}}" alt="..."> <span class="builder-editable" builder-identity="2">{{ get_phrase('The Leader in online learning')}}</span></h5>
                     <h1>
-                        <span class="builder-editable" builder-identity="3">Comece a aprender com</span>
-                        <span class="gradient color shadow-none builder-editable" builder-identity="4">instrutores especialistas</span>
+                        <span class="builder-editable" builder-identity="3">{{ get_phrase("Start learning from the world's pro")}}</span>
+                        <span class="gradient color shadow-none builder-editable" builder-identity="4">{{ get_phrase('instructors')}}</span>
                     </h1>
-                    <p class="builder-editable" builder-identity="5">Aprenda com conteudo pratico, trilhas completas e suporte para evoluir no seu ritmo.</p>
+                    <p class="builder-editable" builder-identity="5">{{ get_phrase('We invites learners to explore courses designed by industry experts, offering cutting-edge content for skill development.')}}</p>
                     <div class="banner-btn">
-                        <a href="{{ route('courses') }}" class="eBtn gradient builder-editable" builder-identity="6">Comecar agora</a>
-                        <a data-bs-toggle="modal" data-bs-target="#promoVideo" href="#" class="eBtn learn-btn"><i class="fa-solid fa-play"></i>Saiba mais</a>
+                        <a href="{{ route('courses') }}" class="eBtn gradient builder-editable" builder-identity="6">{{ get_phrase('Get Started') }}</a>
+                        <a data-bs-toggle="modal" data-bs-target="#promoVideo" href="#" class="eBtn learn-btn"><i class="fa-solid fa-play"></i>{{ get_phrase('Learn More') }}</a>
                     </div>
                     @if ($contact_phone)
-                        <p class="mt-3 mb-0">Contato: <a href="tel:{{ $contact_phone_tel }}">{{ $contact_phone }}</a></p>
+                        <p class="mt-3 mb-0">{{ get_phrase('Contact') }}: <a href="tel:{{ $contact_phone_tel }}">{{ $contact_phone }}</a></p>
                     @endif
                 </div>
             </div>
@@ -70,7 +70,7 @@
                         </span>
                         <div class="b-text">
                             <h5>{{ total_enrolled() }}+</h5>
-                            <p>Alunos ja matriculados</p>
+                            <p>{{ get_phrase('Students has Enrolled') }}</p>
                         </div>
                     </div>
                 </div>

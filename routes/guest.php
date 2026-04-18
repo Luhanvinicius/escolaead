@@ -7,6 +7,7 @@ use App\Http\Controllers\frontend\ContactController;
 use App\Http\Controllers\frontend\CourseController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\InstructorController;
+use App\Http\Controllers\frontend\LanguageController;
 use App\Http\Controllers\frontend\NewsletterController;
 use App\Http\Controllers\frontend\TeamTrainingController;
 use App\Http\Controllers\frontend\TutorBookingController;
@@ -17,6 +18,9 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
     Route::post('/update_watch_history', 'update_watch_history_with_duration')->name('update_watch_history');
 });
+
+// language switcher (guest + authenticated users)
+Route::get('select/language/', [LanguageController::class, 'select_lng'])->name('select.lng');
 
 // course page
 Route::controller(CourseController::class)->group(function () {

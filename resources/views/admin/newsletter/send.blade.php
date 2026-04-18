@@ -68,7 +68,7 @@
                         };
                     }
                 },
-                placeholder: 'Search here',
+                placeholder: @json(get_phrase('Search here')),
                 minimumInputLength: 1,
             });
         });

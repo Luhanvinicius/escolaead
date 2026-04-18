@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\frontend\HomeController;
-use App\Http\Controllers\frontend\LanguageController;
 use App\Http\Controllers\student\BecomeInstructorController;
 use App\Http\Controllers\student\BlogCommentController;
 use App\Http\Controllers\student\BlogController;
@@ -150,6 +149,3 @@ Route::get('certificate/{identifier}', [HomeController::class, 'download_certifi
 
 // offline payment
 Route::post('payment/offline/store', [OfflinePaymentController::class, 'store'])->name('payment.offline.store');
-
-// select language
-Route::get('select/language/', [LanguageController::class, 'select_lng'])->name('select.lng');

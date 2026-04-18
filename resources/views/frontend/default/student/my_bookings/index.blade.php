@@ -1,5 +1,5 @@
 @extends('layouts.default')
-@push('title', get_phrase('Booked schedules'))
+@push('title', get_phrase('My Bookings'))
 @push('meta')@endpush
 @push('css')@endpush
 @section('content')
@@ -10,18 +10,18 @@
                 @include('frontend.default.student.left_sidebar')
 
                 <div class="col-lg-9">
-                    <h4 class="g-title mb-5">{{ get_phrase('Booked schedules') }}</h4>
+                    <h4 class="g-title mb-5">{{ get_phrase('My Bookings') }}</h4>
                     <div class="my-panel purchase-history-panel">
 
                         <ul class="nav nav-pills mb-3 gap-4" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a href="{{ route('my_bookings', ['tab' => 'live-upcoming']) }}" class="nav-link gradient-border-btn {{ request('tab') === 'live-upcoming' ? 'active' : '' }}">
-                                    Live & Upcoming
+                                    {{ get_phrase('Live & Upcoming') }}
                                 </a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a href="{{ route('my_bookings', ['tab' => 'archive']) }}" class="nav-link gradient-border-btn {{ request('tab') === 'archive' ? 'active' : '' }}">
-                                    Archive
+                                    {{ get_phrase('Archive') }}
                                 </a>
                             </li>
                         </ul>

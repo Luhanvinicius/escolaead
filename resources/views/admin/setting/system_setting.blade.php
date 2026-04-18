@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@push('title', get_phrase('System settings'))
+@push('title', get_phrase('System Settings'))
 @push('meta')@endpush
 @push('css')@endpush
 @section('content')

@@ -7,8 +7,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title text-center">
-                    <span class="title-head builder-editable" builder-identity="1">Categorias</span>
-                    <h2 class="title builder-editable" builder-identity="2">Explore as principais categorias de cursos</h2>
+                    <span class="title-head builder-editable" builder-identity="1">{{get_phrase('Categories')}}</span>
+                    <h2 class="title builder-editable" builder-identity="2">{{get_phrase('Explore Top Courses Caterories')}}</h2>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
                         </div>
                         <div class="single-category-name">
                             <h4>{{ $category->title }}</h4>
-                            <p>{{ count_category_courses($category->id) }} cursos</p>
+                            <p>{{ count_category_courses($category->id) }} {{get_phrase('courses')}}</p>
                         </div>
                     </a>
                 </div>

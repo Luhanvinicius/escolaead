@@ -7,7 +7,7 @@
         <div class="row align-items-center">
             <div class="col-lg-5 col-md-6">
                 <div class="skill-image position-relative">
-                    <img class="builder-editable" builder-identity="1" src="{{asset('assets/frontend/default/image/skill-image.png')}}" alt="...">
+                    <img class="builder-editable" builder-identity="1" src="{{ asset('assets/frontend/default/image/skill-image.png') }}" alt="...">
                     <div class="over-text">
                         <span>
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,19 +18,19 @@
 
                         </span>
                         <div class="b-text">
-                            <h5 class="builder-editable" builder-identity="2">150k +</h5>
-                            <p class="builder-editable" builder-identity="3">Cursos mais bem avaliados</p>
+                            <h5 class="builder-editable" builder-identity="2">{{ get_phrase('150k +') }}</h5>
+                            <p class="builder-editable" builder-identity="3">{{ get_phrase('Top rated Courses') }}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-7 col-md-6">
                 <div class="skil-content">
-                    <span class="title-head builder-editable" builder-identity="4">Sobre nos</span>
-                    <h2 class="title"><span class="builder-editable" builder-identity="5">Aprenda e desenvolva suas habilidades com</span> <span class="gradient shadow-none color builder-editable" builder-identity="52nd">Educate</span>
+                    <span class="title-head builder-editable" builder-identity="4">{{ get_phrase('Know About Us') }}</span>
+                    <h2 class="title"><span class="builder-editable" builder-identity="5">{{ get_phrase('Learn & Grow Your Skills From ') }}</span> <span class="gradient shadow-none color builder-editable" builder-identity="52nd">{{ get_phrase('Educate') }}</span>
                     </h2>
                     <p class="description mt-5 builder-editable" builder-identity="6">
-                        Somos uma plataforma focada em ensino pratico, trilhas objetivas e evolucao real para alunos e profissionais.
+                        {{ get_phrase('It offers courses designed to enhance knowledge and develop practical skills for personal and professional growth.') }}
                     </p>
                     <ul>
                         <li>
@@ -42,8 +42,8 @@
                                 </svg>
                             </div>
                             <div class="skill-text">
-                                <span class="builder-editable" builder-identity="7">Acesso para toda a vida</span>
-                                <p class="builder-editable" builder-identity="8">Assista as aulas no seu ritmo e revise quando quiser, sem perder o acesso ao conteudo.
+                                <span class="builder-editable" builder-identity="7">{{ get_phrase('Life time Access') }}</span>
+                                <p class="builder-editable" builder-identity="8">{{ get_phrase('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.') }}
                                 </p>
                             </div>
                         </li>
@@ -56,12 +56,12 @@
                                 </svg>
                             </div>
                             <div class="skill-text">
-                                <span class="builder-editable" builder-identity="9">Estude de qualquer lugar</span>
-                                <p class="builder-editable" builder-identity="10">Conteudo disponivel em qualquer dispositivo para voce aprender onde estiver.</p>
+                                <span class="builder-editable" builder-identity="9">{{ get_phrase('Learn from Anywhere') }}</span>
+                                <p class="builder-editable" builder-identity="10">{{ get_phrase('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.') }}</p>
                             </div>
                         </li>
                     </ul>
-                    <a href="{{ route('about.us') }}" class="eBtn gradient mt-50 mb-5 builder-editable" builder-identity="11">Saiba mais sobre nos <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                    <a href="{{ route('about.us') }}" class="eBtn gradient mt-50 mb-5 builder-editable" builder-identity="11">{{ get_phrase('More about us') }} <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
                 </div>
             </div>
         </div>

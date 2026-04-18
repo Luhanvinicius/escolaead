@@ -23,7 +23,7 @@
                 <div class="header-menu d-flex justify-content-end me-lg-auto ms-lg-0 ms-auto mt-2 pt-1">
                     <div class="nav-menu w-100">
                         <ul class="primary-menu main-menu-ul d-flex align-items-center w-100">
-                            <li><a href="{{ route('home') }}" class="@if ($current_route == 'home') active @endif">Inicio</a></li>
+                            <li><a href="{{ route('home') }}" class="@if ($current_route == 'home') active @endif">{{ get_phrase('Home') }}</a></li>
                             {{-- <li class="have-mega-menu"><a class="menu-parent-a @if ($current_route == 'home') active @endif" href="{{ route('home') }}">{{ get_phrase('Home') }}</a>
                                 <ul class="mega-dropdown-menu mega main-mega-menu">
                                     <div class="mega-menu-items">
@@ -40,7 +40,7 @@
                                     </div>
                                 </ul>
                             </li> --}}
-                            <li class="have-mega-menu"><a class="menu-parent-a @if ($current_route == 'courses') active @endif" href="{{ route('courses') }}">Cursos</a>
+                            <li class="have-mega-menu"><a class="menu-parent-a @if ($current_route == 'courses') active @endif" href="{{ route('courses') }}">{{ get_phrase('Courses') }}</a>
                                 <ul class="mega-dropdown-menu mega main-mega-menu">
                                     <div class="mega-menu-items">
                                         <ul class="mega_list">
@@ -73,7 +73,7 @@
                                             <li>
                                                 <a href="{{ route('courses') }}">
                                                     <span class="me-3"><i class="fas fa-list-ul"></i></span>
-                                                    <span class="me-auto">Todos os cursos</span>
+                                                    <span class="me-auto">{{ get_phrase('All Courses') }}</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -82,20 +82,20 @@
                             </li>
                             <li class="pe-2 ps-5"><a href="{{ route('bootcamps') }}" class="@if ($current_route == 'bootcamps' || $current_route == 'bootcamp.details') active @endif">{{ get_phrase('Bootcamp') }}</a></li>
                             {{-- <li><a href="{{ route('team.packages') }}" class="@if ($current_route == 'team.packages' || $current_route == 'team.package.details') active @endif">{{ get_phrase('Team Training') }}</a></li> --}}
-                            <li><a href="{{ route('tutor_list') }}" class="@if ($current_route == 'tutor_list') active @endif">Encontrar tutor</a></li>
+                            <li><a href="{{ route('tutor_list') }}" class="@if ($current_route == 'tutor_list') active @endif">{{ get_phrase('Find A Tutor') }}</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-sm-5 col-md-3 col-xl-4 ms-lg-0 col-auto ms-auto">
                 <form action="{{ route('courses') }}" method="get" class="Esearch_entry d-none d-sm-inline-block w-100 ms-4 mt-2">
-                    <input type="text" name="search" class="form-control" placeholder="Buscar..." @if (request()->has('search')) value="{{ request()->input('search') }}" @endif>
+                    <input type="text" name="search" class="form-control" placeholder="{{ get_phrase('Search...') }}" @if (request()->has('search')) value="{{ request()->input('search') }}" @endif>
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                 <div class="floating-searchbar d-inline-block d-sm-none @auth loged-in @endauth">
                     <button type="button" class="mt-1 py-3" onclick="this.parentElement.querySelector('form').classList.toggle('show')"><i class="fa-solid fa-magnifying-glass"></i></button>
                     <form action="{{ route('courses') }}" method="get">
-                        <input type="text" name="search" class="form-control" @if (request()->has('search')) value="{{ request()->input('search') }}" @endif placeholder="Buscar cursos">
+                        <input type="text" name="search" class="form-control" @if (request()->has('search')) value="{{ request()->input('search') }}" @endif placeholder="{{ get_phrase('Search courses') }}">
                         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
                 </div>
@@ -268,7 +268,7 @@
                             </ul>
                         </div>
                     @else
-                        <a href="{{ route('login') }}" class="d-none d-lg-inline-block eBtn btn gradient mb-1">Entrar</a> @endif <span class="toggle-bar
+                        <a href="{{ route('login') }}" class="d-none d-lg-inline-block eBtn btn gradient mb-1">{{ get_phrase('Login') }}</a> @endif <span class="toggle-bar
                     text-dark ms-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-sharp fa-solid fa-bars"></i></span>
                 </div>
             </div>
@@ -317,10 +317,10 @@
                         </li> @endauth
 
                     <li><a href="{{ route('home') }}"
-                    class="btn btn-toggle-list d-inline-flex align-items-center text-16px fw-500 w-100 rounded border-0 py-3"> Inicio</a></li>
+                    class="btn btn-toggle-list d-inline-flex align-items-center text-16px fw-500 w-100 rounded border-0 py-3"> {{ get_phrase('Home') }}</a></li>
                     <li>
                         <button class="btn btn-toggle d-inline-flex align-items-center text-16px fw-500 w-100 collapsed rounded border-0 py-3" data-bs-toggle="collapse" data-bs-target="#category-collapse" aria-expanded="false">
-                            Cursos
+                            {{ get_phrase('Courses') }}
                             <span class="icons float-end ms-auto"><i class="fa-solid fa-angle-down"></i></span>
                         </button>
                         <div class="collapse" id="category-collapse">
@@ -336,14 +336,14 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="{{ route('bootcamps') }}" class="btn btn-toggle-list d-inline-flex align-items-center text-16px fw-500 w-100 rounded border-0 py-3">Bootcamp</a></li>
+                    <li><a href="{{ route('bootcamps') }}" class="btn btn-toggle-list d-inline-flex align-items-center text-16px fw-500 w-100 rounded border-0 py-3">{{ get_phrase('Bootcamp') }}</a></li>
                     {{-- <li><a href="{{ route('team.packages') }}" class="btn btn-toggle-list d-inline-flex align-items-center text-16px fw-500 w-100 rounded border-0 py-3">{{ get_phrase('Team Training') }}</a></li> --}}
                     </ul>
                 </div>
                 @guest
                     <div class="btn-off">
-                        <a href="{{ route('login') }}" class="eBtn btn gradient mb-3">Entrar</a>
-                        <a href="{{ route('register.form') }}" class="eBtn btn gradient sign">Criar conta</a>
+                        <a href="{{ route('login') }}" class="eBtn btn gradient mb-3">{{ get_phrase('Login') }}</a>
+                        <a href="{{ route('register.form') }}" class="eBtn btn gradient sign">{{ get_phrase('Sign Up') }}</a>
                     </div>
                 @endguest
             </div>

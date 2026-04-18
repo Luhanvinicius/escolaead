@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-12">
-                <h1 class="title mb-4 builder-editable" builder-identity="1">Frequently Asked Questions?</h1>
-                <p class="info builder-editable" builder-identity="2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate ad litora torquent per conubi himenaeos Awesome  site Lorem Ipsum has been the industry's standard dummy text ever since.</p>
+                <h1 class="title mb-4 builder-editable" builder-identity="1">{{ get_phrase('Frequently Asked Questions?') }}</h1>
+                <p class="info builder-editable" builder-identity="2">{{ get_phrase("FAQ provides quick answers to common inquiries, helping users resolve doubts efficiently.") }}</p>
             </div>
         </div>
         <div class="row mb-110 mt-5">

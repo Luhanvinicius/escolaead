@@ -643,7 +643,22 @@ if (!function_exists('remove_file')) {
 if (!function_exists('get_all_language')) {
     function get_all_language()
     {
-        return DB::table('languages')->select('name')->distinct()->get();
+        $languages = DB::table('languages')->select('name')->get()
+            ->map(function ($language) {
+                return (object) ['name' => normalize_language_name($language->name)];
+            })
+            ->unique('name')
+            ->values();
+
+        $defaultLanguages = collect([
+            (object) ['name' => 'english'],
+            (object) ['name' => 'pt-br'],
+        ]);
+
+        return $languages
+            ->merge($defaultLanguages)
+            ->unique('name')
+            ->values();
     }
 }
 
@@ -656,13 +671,70 @@ if (!function_exists('normalize_language_name')) {
         }
 
         $languageAliases = [
+            'en'         => 'english',
+            'en-us'      => 'english',
+            'en_us'      => 'english',
             'portuguese' => 'pt-br',
             'portugues'  => 'pt-br',
+            'pt'         => 'pt-br',
+            'pt-pt'      => 'pt-br',
             'pt_br'      => 'pt-br',
             'ptbr'       => 'pt-br',
         ];
 
         return $languageAliases[$language] ?? $language;
+    }
+}
+
+if (!function_exists('language_name_candidates')) {
+    function language_name_candidates($language = '')
+    {
+        $normalizedLanguage = normalize_language_name($language);
+
+        $candidates = [$normalizedLanguage];
+
+        if ($normalizedLanguage === 'english') {
+            $candidates = array_merge($candidates, ['english', 'en']);
+        }
+
+        if ($normalizedLanguage === 'pt-br') {
+            $candidates = array_merge($candidates, ['pt-br', 'pt_br', 'ptbr', 'pt', 'portuguese', 'portugues']);
+        }
+
+        return array_values(array_unique(array_map(function ($item) {
+            return strtolower(trim((string) $item));
+        }, $candidates)));
+    }
+}
+
+if (!function_exists('language_id_by_name')) {
+    function language_id_by_name($language = '')
+    {
+        foreach (language_name_candidates($language) as $languageNameCandidate) {
+            $languageId = DB::table('languages')->whereRaw('LOWER(name) = ?', [$languageNameCandidate])->value('id');
+            if ($languageId) {
+                return $languageId;
+            }
+        }
+
+        return null;
+    }
+}
+
+if (!function_exists('language_html_code')) {
+    function language_html_code($language = '')
+    {
+        $normalizedLanguage = normalize_language_name($language);
+
+        if ($normalizedLanguage === 'english') {
+            return 'en';
+        }
+
+        if ($normalizedLanguage === 'pt-br') {
+            return 'pt-BR';
+        }
+
+        return str_replace('_', '-', $normalizedLanguage);
     }
 }
 
@@ -686,30 +758,43 @@ if (!function_exists('language_display_name')) {
 if (!function_exists('get_phrase')) {
     function get_phrase($phrase = '', $value_replace = array())
     {
-        $active_lan    = normalize_language_name(session('language') ?? get_settings('language'));
-        $active_lan_id = DB::table('languages')->whereRaw('LOWER(name) = ?', [$active_lan])->value('id');
+        $activeLanguage = normalize_language_name(session('language') ?? get_settings('language'));
+        $englishLanguageId = language_id_by_name('english');
 
-        // Backward compatibility for old "portuguese" records during transition.
-        if (!$active_lan_id && $active_lan === 'pt-br') {
-            $active_lan_id = DB::table('languages')
-                ->whereIn('name', ['pt-br', 'PT-BR', 'portuguese', 'Portuguese'])
-                ->value('id');
-        }
-
-        if (!$active_lan_id) {
-            $active_lan_id = DB::table('languages')->whereRaw('LOWER(name) = ?', ['english'])->value('id');
-        }
-
-        $lan_phrase    = DB::table('language_phrases')->where('language_id', $active_lan_id)->where('phrase', $phrase)->first();
-
-        if ($lan_phrase) {
-            $translated = $lan_phrase->translated;
+        // English is treated as source language from code phrases, not from translated DB values.
+        if ($activeLanguage === 'english') {
+            $translated = $phrase;
         } else {
-            $translated  = $phrase;
-            $english_lan = DB::table('languages')->whereRaw('LOWER(name) = ?', ['english'])->first();
-            if ($english_lan && DB::table('language_phrases')->where('language_id', $english_lan->id)->where('phrase', $phrase)->count() == 0) {
-                DB::table('language_phrases')->insert(['language_id' => $english_lan->id, 'phrase' => $phrase, 'translated' => $translated]);
+            $activeLanguageId = language_id_by_name($activeLanguage);
+
+            // Backward compatibility for old installations without a dedicated pt-br language row.
+            if (!$activeLanguageId && $activeLanguage === 'pt-br') {
+                $activeLanguageId = $englishLanguageId;
             }
+
+            if (!$activeLanguageId) {
+                $activeLanguageId = $englishLanguageId;
+            }
+
+            $languagePhrase = DB::table('language_phrases')
+                ->where('language_id', $activeLanguageId)
+                ->where('phrase', $phrase)
+                ->first();
+
+            if ($languagePhrase && trim((string) $languagePhrase->translated) !== '') {
+                $translated = $languagePhrase->translated;
+            } else {
+                $translated = $phrase;
+            }
+        }
+
+        // Keep source phrase registered in English for phrase management screens.
+        if ($englishLanguageId && DB::table('language_phrases')->where('language_id', $englishLanguageId)->where('phrase', $phrase)->count() == 0) {
+            DB::table('language_phrases')->insert([
+                'language_id' => $englishLanguageId,
+                'phrase'      => $phrase,
+                'translated'  => $phrase,
+            ]);
         }
 
         if (!is_array($value_replace)) {
