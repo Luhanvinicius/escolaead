@@ -28,7 +28,7 @@
     <!-- Start About Us -->
     <section class="course-details-wraper pb-120 pt-30">
         <div class="container description-style">
-            {!! htmlspecialchars_decode(removeScripts(get_frontend_settings('refund_policy'))) !!}
+            {!! htmlspecialchars_decode(removeScripts(get_frontend_settings('refund_policy') ?: get_phrase('Refund policy'))) !!}
         </div>
     </section>
     <!-- End About Us -->

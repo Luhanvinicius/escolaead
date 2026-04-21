@@ -9,8 +9,9 @@
                 <div class="banner-content">
                     <h5 class="d-flex"><img class="builder-editable" builder-identity="1" src="{{asset('assets/page-builder/block-image/roket.svg')}}" alt="..."> <span class="builder-editable" builder-identity="2">{{ get_phrase('The Leader in online learning')}}</span></h5>
                     <h1>
-                        <span class="builder-editable" builder-identity="3">{{ get_phrase("Start learning from the world's pro")}}</span>
-                        <span class="gradient color shadow-none builder-editable" builder-identity="4">{{ get_phrase('instructors')}}</span>
+                        <span class="builder-editable" builder-identity="3">{{ get_phrase("Start learning from the world's pro") }}</span>
+                        <span class="gradient color shadow-none builder-editable" builder-identity="4">{{ get_phrase('instructors') }}</span>
+                        <span class="d-none">{{ get_phrase("Start learning from the world's pro instructors") }}</span>
                     </h1>
                     <p class="builder-editable" builder-identity="5">{{ get_phrase('We invites learners to explore courses designed by industry experts, offering cutting-edge content for skill development.')}}</p>
                     <div class="banner-btn">

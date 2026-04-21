@@ -778,8 +778,16 @@ if (!function_exists('get_phrase')) {
 
             $languagePhrase = DB::table('language_phrases')
                 ->where('language_id', $activeLanguageId)
-                ->where('phrase', $phrase)
+                ->whereRaw('BINARY phrase = ?', [$phrase])
                 ->first();
+
+            if (!$languagePhrase) {
+                $languagePhrase = DB::table('language_phrases')
+                    ->where('language_id', $activeLanguageId)
+                    ->whereRaw('LOWER(phrase) = LOWER(?)', [$phrase])
+                    ->orderByRaw("CASE WHEN TRIM(COALESCE(translated, '')) <> '' THEN 0 ELSE 1 END")
+                    ->first();
+            }
 
             if ($languagePhrase && trim((string) $languagePhrase->translated) !== '') {
                 $translated = $languagePhrase->translated;
@@ -789,7 +797,7 @@ if (!function_exists('get_phrase')) {
         }
 
         // Keep source phrase registered in English for phrase management screens.
-        if ($englishLanguageId && DB::table('language_phrases')->where('language_id', $englishLanguageId)->where('phrase', $phrase)->count() == 0) {
+        if ($englishLanguageId && DB::table('language_phrases')->where('language_id', $englishLanguageId)->whereRaw('BINARY phrase = ?', [$phrase])->count() == 0) {
             DB::table('language_phrases')->insert([
                 'language_id' => $englishLanguageId,
                 'phrase'      => $phrase,

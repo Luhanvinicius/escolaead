@@ -28,7 +28,7 @@
     <!-- Start About Us -->
     <section class="course-details-wraper pb-120 pt-30">
         <div class="container description-style">
-            {!! htmlspecialchars_decode(removeScripts(get_frontend_settings('terms_and_condition'))) !!}
+            {!! htmlspecialchars_decode(removeScripts(get_frontend_settings('terms_and_condition') ?: get_phrase('Terms and condition'))) !!}
         </div>
     </section>
     <!-- End About Us -->

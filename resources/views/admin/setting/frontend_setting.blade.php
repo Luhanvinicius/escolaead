@@ -12,7 +12,7 @@
     </div>
 
     <div class="fpb-7 mb-3">
-        <label class="form-label ol-form-label" for="youtube_promo_video">{{ get_phrase('Promo Video Provider') }}<span class="required">*</span></label><br>
+        <label class="form-label ol-form-label" for="youtube_promo_video">{{ get_phrase('Promotional Video Provider') }}<span class="required">*</span></label><br>
         <input type="radio" class="form-check-input" value="youtube" name="promo_video_provider" id="youtube_promo_video" @if (get_frontend_settings('promo_video_provider') == 'youtube') checked @endif>&nbsp;<label for="youtube_promo_video">{{ get_phrase('Youtube Video Link') }}</label>
 
         &nbsp;&nbsp;
@@ -24,13 +24,13 @@
     </div>
 
     <div class="fpb-7 mb-3">
-        <label class="form-label ol-form-label" for="promo_video_link">{{ get_phrase('Promo video link') }}<span class="required">*</span></label>
+        <label class="form-label ol-form-label" for="promo_video_link">{{ get_phrase('Promotional Video Link') }}<span class="required">*</span></label>
         <input type="text" name = "promo_video_link" id = "promo_video_link" class="form-control ol-form-control" value="{{ get_frontend_settings('promo_video_link') }}" required>
     </div>
 
 
     <div class="fpb-7 mb-3">
-        <label class="form-label ol-form-label">{{ get_phrase('Cookie status') }}<span class="required">*</span></label><br>
+        <label class="form-label ol-form-label">{{ get_phrase('Cookie Status') }}<span class="required">*</span></label><br>
         <input type="radio" class="form-check-input" value="1" name="cookie_status" @if (get_frontend_settings('cookie_status') == 1) checked @endif>&nbsp;{{ get_phrase('Active') }}
 
         &nbsp;&nbsp;
@@ -59,7 +59,7 @@
 
     <div class="fpb-7 mb-3">
         <label class="form-label ol-form-label" for="cookie_policy">{{ get_phrase('Cookie policy') }}</label>
-        <textarea name="cookie_policy" id = "cookie_policy" class="form-control ol-form-control text_editor" rows="5">{!! removeScripts(get_frontend_settings('cookie_policy')) !!}</textarea>
+        <textarea name="cookie_policy" id = "cookie_policy" class="form-control ol-form-control text_editor" rows="5">{!! removeScripts(get_frontend_settings('cookie_policy') ?: get_phrase('Cookie policy')) !!}</textarea>
     </div>
     <div class="fpb-7 mb-3">
         <div class="alert alert-light border mb-0">
@@ -68,16 +68,16 @@
     </div>
     <div class="fpb-7 mb-3">
         <label class="form-label ol-form-label" for="terms_and_condition">{{ get_phrase('Terms and condition') }}</label>
-        <textarea name="terms_and_condition" id ="terms_and_condition" class="form-control ol-form-control text_editor" rows="5">{{ get_frontend_settings('terms_and_condition') }}</textarea>
+        <textarea name="terms_and_condition" id ="terms_and_condition" class="form-control ol-form-control text_editor" rows="5">{{ get_frontend_settings('terms_and_condition') ?: get_phrase('Terms and condition') }}</textarea>
     </div>
     <div class="fpb-7 mb-3">
         <label class="form-label ol-form-label" for="privacy_policy">{{ get_phrase('Privacy policy') }}</label>
-        <textarea name="privacy_policy" id = "privacy_policy" class="form-control ol-form-control text_editor" rows="5">{{ get_frontend_settings('privacy_policy') }}</textarea>
+        <textarea name="privacy_policy" id = "privacy_policy" class="form-control ol-form-control text_editor" rows="5">{{ get_frontend_settings('privacy_policy') ?: get_phrase('Privacy policy') }}</textarea>
     </div>
 
     <div class="fpb-7 mb-3">
         <label class="form-label ol-form-label" for="refund_policy">{{ get_phrase('Refund policy') }}</label>
-        <textarea name="refund_policy" id = "refund_policy" class="form-control ol-form-control text_editor" rows="5">{{ get_frontend_settings('refund_policy') }}</textarea>
+        <textarea name="refund_policy" id = "refund_policy" class="form-control ol-form-control text_editor" rows="5">{{ get_frontend_settings('refund_policy') ?: get_phrase('Refund policy') }}</textarea>
     </div>
 
     <div class="fpb-7 mb-3">
