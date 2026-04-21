@@ -31,7 +31,7 @@
             </div>
             <div class="fpb-7 mb-3">
                 <label class="form-label ol-form-label">{{ get_phrase('Location') }} <small class="text-12px text-muted">({{ get_phrase('Latitude') }}, {{ get_phrase('Longitude') }})</small></label>
-                <input name="location" class="form-control ol-form-control" placeholder="40.689880, -74.045203" value="{{ $contact_info['location'] ?? '' }}">
+                <input name="location" class="form-control ol-form-control" placeholder="{{ get_phrase('e.g. 40.689880, -74.045203') }}" value="{{ $contact_info['location'] ?? '' }}">
             </div>
             <div class="fpb-7 mb-3">
                 <button type="submit" class="btn ol-btn-primary">{{ get_phrase('Submit') }}</button>

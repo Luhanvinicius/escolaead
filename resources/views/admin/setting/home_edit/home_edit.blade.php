@@ -17,7 +17,7 @@
                             <div class="flex-grow-1 px-2 mb-3">
                                 <div class="fpb-7 mb-3">
                                     <label class="form-label ol-form-label">{{ get_phrase('Title') }}</label>
-                                    <input type="text" class="form-control ol-form-control" name="title" value="{{ $instructor_speech->title ?? '' }}" placeholder="Enter a title" required>
+                                    <input type="text" class="form-control ol-form-control" name="title" value="{{ $instructor_speech->title ?? '' }}" placeholder="{{ get_phrase('Enter a title') }}" required>
                                 </div>
                                 <div class="fpb-7 mb-3">
                                     <label class="form-label ol-form-label">{{ get_phrase('Description') }}</label>
@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="fpb-7 mb-3">
                                     <label class="form-label ol-form-label">{{ get_phrase('Video Url') }}</label>
-                                    <input type="text" class="form-control ol-form-control" name="video_url" value="{{ $instructor_speech->video_url ?? '' }}" placeholder="enter a video url" required>
+                                    <input type="text" class="form-control ol-form-control" name="video_url" value="{{ $instructor_speech->video_url ?? '' }}" placeholder="{{ get_phrase('Enter a video url') }}" required>
                                 </div>
                                 <div class="fpb-7 mb-3">
                                     <label class="form-label ol-form-label">{{ get_phrase('Image') }}</label>
@@ -151,7 +151,7 @@
                             <div class="flex-grow-1 px-2 mb-3">
                                 <div class="fpb-7 mb-3">
                                     <label class="form-label ol-form-label">{{ get_phrase('Title') }}</label>
-                                    <input type="text" class="form-control ol-form-control" name="title" value="{{ $development->title ?? '' }}" placeholder="Enter a title" required>
+                                    <input type="text" class="form-control ol-form-control" name="title" value="{{ $development->title ?? '' }}" placeholder="{{ get_phrase('Enter a title') }}" required>
                                 </div>
                                 <div class="fpb-7 mb-3">
                                     <label class="form-label ol-form-label">{{ get_phrase('Description') }}</label>
@@ -186,7 +186,7 @@
                             <div class="flex-grow-1 px-2 mb-3">
                                 <div class="fpb-7 mb-3">
                                     <label class="form-label ol-form-label">{{ get_phrase('Title') }}</label>
-                                    <input type="text" class="form-control ol-form-control" name="title" value="{{ $kindergarden->title ?? '' }}" placeholder="Enter a title" required>
+                                    <input type="text" class="form-control ol-form-control" name="title" value="{{ $kindergarden->title ?? '' }}" placeholder="{{ get_phrase('Enter a title') }}" required>
                                 </div>
                                 <div class="fpb-7 mb-3">
                                     <label class="form-label ol-form-label">{{ get_phrase('Description') }}</label>
@@ -225,7 +225,7 @@
                             <div class="flex-grow-1 px-2 mb-3">
                                 <div class="fpb-7 mb-3">
                                     <label class="form-label ol-form-label">{{ get_phrase('Title') }}</label>
-                                    <input type="text" class="form-control ol-form-control" name="title" value="{{ $instructor->title ?? '' }}" placeholder="Enter a title" required>
+                                    <input type="text" class="form-control ol-form-control" name="title" value="{{ $instructor->title ?? '' }}" placeholder="{{ get_phrase('Enter a title') }}" required>
                                 </div>
                                 <div class="fpb-7 mb-3">
                                     <label class="form-label ol-form-label">{{ get_phrase('Description') }}</label>
@@ -233,7 +233,7 @@
                                 </div>
                                 <div class="fpb-7 mb-3">
                                     <label class="form-label ol-form-label">{{ get_phrase('Video Url') }}</label>
-                                    <input type="text" class="form-control ol-form-control" name="video_url" value="{{ $instructor->video_url ?? '' }}" placeholder="enter a video url" required>
+                                    <input type="text" class="form-control ol-form-control" name="video_url" value="{{ $instructor->video_url ?? '' }}" placeholder="{{ get_phrase('Enter a video url') }}" required>
                                 </div>
                                 <div class="fpb-7 mb-3">
                                     <label class="form-label ol-form-label">{{ get_phrase('Image') }}</label>

@@ -4,14 +4,12 @@
             @csrf
 
             <div class="fpb-7 mb-3">
-                <label class="form-label ol-form-label" for="smtp_protocol">{{ get_phrase('Protocol') }}<small>(smtp or ssmtp or
-                        mail)</small><span class="required">*</span></label>
+                <label class="form-label ol-form-label" for="smtp_protocol">{{ get_phrase('Protocol') }}<small>({{ get_phrase('smtp or ssmtp or mail') }})</small><span class="required">*</span></label>
                 <input type="text" name = "protocol" id = "smtp_protocol" class="form-control ol-form-control" value="{{ get_settings('protocol') }}" required>
             </div>
 
             <div class="fpb-7 mb-3">
-                <label class="form-label ol-form-label" for="smtp_crypto">{{ get_phrase('Smtp crypto') }} <small>(ssl or
-                        tls)</small><span class="required">*</span></label>
+                <label class="form-label ol-form-label" for="smtp_crypto">{{ get_phrase('Smtp crypto') }} <small>({{ get_phrase('ssl or tls') }})</small><span class="required">*</span></label>
                 <input type="text" name = "smtp_crypto" id = "smtp_crypto" class="form-control ol-form-control" value="{{ get_settings('smtp_crypto') }}">
             </div>
 

@@ -299,6 +299,20 @@ class SyncLanguagePhrases extends Command
             'We invites learners to explore courses designed by industry experts, offering cutting-edge content for skill development.' => 'Convidamos os alunos a explorar cursos criados por especialistas do setor, com conteudo de ponta para o desenvolvimento de habilidades.',
             'Get Started' => 'Comecar agora',
             'Learn More' => 'Saiba Mais',
+            'Our Blog' => 'Nosso Blog',
+            'Have a look on our news' => 'Confira nossas novidades',
+            'Testimonial' => 'Depoimentos',
+            'What our clients says about us' => 'O que nossos clientes dizem sobre nos',
+            'Enter a title' => 'Digite um titulo',
+            'Enter a video url' => 'Digite a URL do video',
+            'e.g. 40.689880, -74.045203' => 'ex.: 40.689880, -74.045203',
+            'Canonical Url' => 'URL canonica',
+            'Custom Url' => 'URL personalizada',
+            'Meta keywords' => 'Palavras-chave meta',
+            'e.g. https://example.com/courses' => 'ex.: https://example.com/courses',
+            'e.g. https://example.com/dresses/courses' => 'ex.: https://example.com/dresses/courses',
+            'smtp or ssmtp or mail' => 'smtp ou ssmtp ou mail',
+            'ssl or tls' => 'ssl ou tls',
         ];
 
         $updatedCount = 0;
