@@ -493,7 +493,7 @@
                     <div class="modal-body">
                         <div class="instructor-modal-video">
                             <div class="plyr__video-embed" id="becomeInstructorPlyr">
-                                <iframe src="{{ $instructor_speech->video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <iframe src="{{ $instructor_speech->video_url }}" title="{{ get_phrase('YouTube video player') }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>

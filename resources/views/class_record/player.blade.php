@@ -1,6 +1,6 @@
 @if ($class->enrolled_user && auth()->user()->id)
     <!doctype html>
-    <html lang="en">
+    <html lang="{{ session('language') == 'pt-br' ? 'pt-BR' : 'en' }}">
 
     <head>
         {{ config(['app.name' => get_settings('system_title')]) }}

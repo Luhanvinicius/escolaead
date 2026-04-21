@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ language_html_code(session('language') ?? get_settings('language')) }}">
+<html lang="{{ session('language') == 'pt-br' ? 'pt-BR' : 'en' }}">
 
 <head>
     @include('layouts.seo')

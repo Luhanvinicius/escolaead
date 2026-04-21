@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ session('language') == 'pt-br' ? 'pt-BR' : 'en' }}">
 
 <head>
     <title>{{ get_phrase('Course Playing Page') }}| {{ config('app.name') }}</title>

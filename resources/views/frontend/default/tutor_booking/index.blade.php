@@ -74,7 +74,7 @@
                         <div class="tutor-bootcamp-card">
                             <div class="lms1-video-player tutor-bootcamp-video">
                                 <div class="plyr__video-embed lms-player{{ $index }}" >
-                                    <iframe src="{{ $tutor->video_url ?? 'https://www.youtube.com/watch?v=OHz0xIR8uwI' }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe src="{{ $tutor->video_url ?? 'https://www.youtube.com/watch?v=OHz0xIR8uwI' }}" title="{{ get_phrase('YouTube video player') }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 </div>
                             </div>
                             <div>

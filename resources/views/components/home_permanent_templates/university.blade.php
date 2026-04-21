@@ -214,7 +214,7 @@
                                                         <video class="universityPlayer" id="player{{ $key }}" src="{{ $slider_items }}" controls></video>
                                                     @else
                                                         <div class="plyr__video-embed universityPlayer" id="player{{ $key }}">
-                                                            <iframe src="{{ $slider_items }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                            <iframe src="{{ $slider_items }}" title="{{ get_phrase('YouTube video player') }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                                         </div>
                                                     @endif
                                                 </div>

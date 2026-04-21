@@ -89,7 +89,7 @@
                                         <span class="text-danger ms-1">*</span>
                                     </label>
                                     <select class="ol-select2" id="duration" name="duration">
-                                        <option value="0">{{ __('Select Duration') }}</option>
+                                        <option value="0">{{ get_phrase('Select Duration') }}</option>
                                         @for ($i = 60; $i <= 300; $i += 15)
                                             <option value="{{ $i }}" {{ $schedule_details->duration == $i ? 'selected' : '' }}>
                                                 {{ intdiv($i, 60) }} hour{{ intdiv($i, 60) > 1 ? 's' : '' }}{{ $i % 60 > 0 ? ' ' . ($i % 60) . ' minutes' : '' }}

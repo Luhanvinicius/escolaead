@@ -26,6 +26,8 @@ class LanguageController extends Controller
         }
 
         session(['language' => $normalizedLanguage]);
+        app()->setLocale($normalizedLanguage == 'pt-br' ? 'pt_BR' : 'en');
+
         return redirect()->back();
     }
 }
